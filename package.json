@@ -20,5 +20,11 @@
     "eslint-config-next": "12.1.0",
     "sass": "^1.49.9",
     "typescript": "4.6.2"
-  }
+  },
+  "licenses" : [
+    {
+      "type": "MIT",
+      "url": "https://www.opensource.org/licenses/mit-license.php"
+    }
+  ]
 }
