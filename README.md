@@ -1,5 +1,8 @@
 # TMX JUPTER
 
+![License](https://img.shields.io/github/license/tjmelo/tmx-jupter)
+![Version](https://img.shields.io/github/v/release/tjmelo/tmx-jupter)
+
 An app to find a complete address through a specific CEP.
 
 ---
@@ -19,5 +22,7 @@ To execute like develop mode
 ```
 
 ---
+
+![Size](https://img.shields.io/github/languages/code-size/tjmelo/tmx-jupter)
 
 Have a nice code :sparkles:
