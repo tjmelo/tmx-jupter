@@ -1,10 +1,11 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.sass'
 
 import { data } from '../controller'
 import { Input } from '../components/input'
+
+import { store } from '../model'
+import { Provider } from 'react-redux'
 
 interface Data {
   data: object
@@ -15,7 +16,9 @@ const Home: NextPage<Data> = ({data}) => {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Find any address through a CEP</h1>
-      <Input />
+      <Provider store={store}>
+        <Input />
+      </Provider>
     </div>
   )
 }
