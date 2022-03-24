@@ -5,15 +5,22 @@ import { data } from '../controller'
 import { Input } from '../components/input'
 
 import { useSelector } from 'react-redux'
+import { useEffect, useState } from 'react'
 
 interface Data {
   data: object
 }
 
-const Home: NextPage<Data> = ({data}) => {
+const Home: NextPage<Data> = () => {
   const CEP = useSelector((state) => state.CEP.value)
+  const [num, setNum] = useState()
+
+  useEffect(() => {
+    const init = async () => setNum(await data(CEP));
+    init()
+  }, [CEP])
   
-  console.log(data)
+  console.log(num)
 
   return (
     <div className={styles.container}>
@@ -23,7 +30,5 @@ const Home: NextPage<Data> = ({data}) => {
   )
    
 }
-
-export const getStaticProps = async () => data('0')
 
 export default Home
