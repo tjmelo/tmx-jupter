@@ -12,8 +12,7 @@ const API = (params?: string): any => {
     .get(params)
     .catch((e: Object) => {
         return {
-            data: {
-                cep: 'CEP not found!' }
+                data: { error: 'CEP not found!' }
             }
     })
 
