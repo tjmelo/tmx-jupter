@@ -1,3 +1,4 @@
 import { data } from "./controller";
+import { store, storeCEP } from "./storeCEP";
 
-export { data }
+export { data, store, storeCEP }

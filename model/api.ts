@@ -8,11 +8,14 @@ const INSTANCE: any = axios.create({
 });
 
 const API = (params?: string): any => {
-    try{
-        return INSTANCE.get(params);
-    } catch (e) {
-        console.warn(e)
-    }
+    return INSTANCE
+    .get(params)
+    .catch((e: Object) => {
+        return {
+                data: { error: 'CEP not found!' }
+            }
+    })
+
 }
 
 export { API } 

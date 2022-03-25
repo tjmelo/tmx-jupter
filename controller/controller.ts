@@ -1,10 +1,6 @@
 import { API } from "../model"
 
-export const data = async (param: any)  => {
+export const data = async (param: string) => {
     const { data } = await API(param);
-    return {
-        props: {
-            data
-        }
-    }
+    return data
 }

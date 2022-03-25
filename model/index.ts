@@ -1,3 +1,4 @@
 import { API } from "./api";
+import { store } from './store'
 
-export { API }
+export { API, store }
