@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 export const counterSlice = createSlice({
   name: 'CEP',
   initialState: {
-    value: 0,
+    value: '0',
   },
   reducers: {
     store: (state, action) => {

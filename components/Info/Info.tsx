@@ -5,7 +5,6 @@ declare interface Data {
 }
 
 export const Info = ({data}: Data) => {
-    console.log(data)
     return (
         <section className={style.custom}>
             
