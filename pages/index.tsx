@@ -21,7 +21,6 @@ const Home: NextPage<Data> = () => {
     const init = async () => setNum(await data(CEP));
     init()
   }, [CEP])
-
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Find any address through a CEP</h1>

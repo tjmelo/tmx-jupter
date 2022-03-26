@@ -1,1 +1,1 @@
-export const URLMAP = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyChyzgzuEb1_AwmCv-aJkdwUMA7pRFE13Q&sensor=false';
+export const URLMAP = `https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_KEY_GOOGLE}=&sensor=false`;
