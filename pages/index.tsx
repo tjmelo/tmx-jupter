@@ -1,5 +1,7 @@
 import type { NextPage } from 'next'
 import styles from '../styles/Home.module.sass'
+import Script from 'next/script'
+import { URLMAP } from './constants'
 
 import { data } from '../controller'
 import { Input } from '../components/input'
@@ -30,6 +32,7 @@ const Home: NextPage<Data> = () => {
           ? <NoCEP />
           : !num?.error ? <Info data={num} /> : <NotFound />
         }
+        <Script src={URLMAP} />
     </div>
   )
    

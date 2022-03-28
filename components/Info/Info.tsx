@@ -1,13 +1,13 @@
 import style from './info.module.sass'
-import { URLMAP } from './constants'
 import { initializeMap } from '../../modules/map'
-import Script from 'next/script'
+import { useEffect } from 'react'
 
 declare interface Data {
     data: object | any
 }
 
 export const Info = ({data}: Data) => {
+    useEffect(() => initializeMap(data.location.coordinates), [data])
     return (
         <>
             <section className={style.custom}>
@@ -31,11 +31,6 @@ export const Info = ({data}: Data) => {
                 </h4>
                 <section id="map"></section>
             </section>
-            <Script
-                strategy='afterInteractive'
-                src={URLMAP}
-                onLoad={() => initializeMap(data.location.coordinates) }
-            />
         </>
     )
 }
