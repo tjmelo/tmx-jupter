@@ -10,7 +10,7 @@ Waiting for a Zip Code:
 
 ![Preview](https://github.com/tjmelo/tmx-jupter/blob/main/src/images/screen2.png)
 
-Zip code found
+Zip code found:
 
 ![Preview](https://github.com/tjmelo/tmx-venus/blob/main/src/images/screen1.png)
 
