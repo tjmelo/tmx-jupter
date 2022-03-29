@@ -1,14 +1,11 @@
 import { useRef } from 'react';
 import style from './input.module.sass';
-import { useDispatch } from 'react-redux';
-import { store } from '../../controller';
 
-export const Input = () => {
-    const dispatch = useDispatch()
+export const Input = ({gettingCEP}: any) => {
     const CEP = useRef<HTMLInputElement|any>();
     const getCEP = (e: any) => {
         e.preventDefault()
-        dispatch(store(CEP.current.value))
+        gettingCEP(CEP.current.value)
     }
 
     return(

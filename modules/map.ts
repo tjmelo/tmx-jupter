@@ -27,9 +27,6 @@ export const  initializeMap = ({longitude, latitude}) => {
     var beachMarker = new google.maps.Marker({
         position: myLatLng,
         map: map,
-    });       
-    google.maps.event.addListener(beachMarker, 'click', function() {
-      infowindow.open(map,beachMarker);
-    });         
+    });              
 
 }
