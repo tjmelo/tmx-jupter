@@ -19,7 +19,7 @@ const Home: NextPage<Data> = () => {
 
   const getCEP = async (e:string) => {
     const cep = await data(e)
-      setNum(getCEP);
+      setNum(cep);
   }
 
   return (
