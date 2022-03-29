@@ -1,10 +1,10 @@
 import axios from "axios";
+import { Console } from "console";
 
 const BASEURL = "https://brasilapi.com.br/api/cep/v2/"
 
 const INSTANCE: any = axios.create({
     baseURL: BASEURL,
-    timeout: 1000,
 });
 
 const API = (params?: string): any => {
@@ -15,7 +15,6 @@ const API = (params?: string): any => {
                 data: { error: 'CEP not found!' }
             }
     })
-
 }
 
 export { API } 

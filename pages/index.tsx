@@ -6,8 +6,7 @@ import { URLMAP } from './constants'
 import { data } from '../controller'
 import { Input } from '../components/input'
 
-import { RootStateOrAny, useSelector } from 'react-redux'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Info } from '../components/Info'
 import { NoCEP, NotFound } from '../components/fallback'
 
@@ -16,19 +15,19 @@ interface Data {
 }
 
 const Home: NextPage<Data> = () => {
-  const CEP = useSelector((state: RootStateOrAny) => state.CEP.value)
   const [num, setNum] = useState()
 
-  useEffect(() => {
-    const init = async () => setNum(await data(CEP));
-    init()
-  }, [CEP])
+  const getCEP = async (e:string) => {
+    const getCEP = await data(e)
+      setNum(getCEP);
+  }
+
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Find any address through a CEP</h1>
-        <Input />
+        <Input gettingCEP={getCEP} />
         { 
-          !CEP
+          !num
           ? <NoCEP />
           : !num?.error ? <Info data={num} /> : <NotFound />
         }
