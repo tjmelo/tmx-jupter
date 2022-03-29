@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import style from './input.module.sass';
 
-export const Input = ({gettingCEP}) => {
+export const Input = ({gettingCEP}: any) => {
     const CEP = useRef<HTMLInputElement|any>();
     const getCEP = (e: any) => {
         e.preventDefault()
