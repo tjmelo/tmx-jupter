@@ -18,7 +18,7 @@ const Home: NextPage<Data> = () => {
   const [num, setNum] = useState()
 
   const getCEP = async (e:string) => {
-    const getCEP = await data(e)
+    const cep = await data(e)
       setNum(getCEP);
   }
 
