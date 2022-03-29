@@ -8,11 +8,11 @@ Input a determinate Zip Code and find associated an full address.
 
 Waiting for a Zip Code:
 
-![Preview](https://github.com/tjmelo/tmx-jupter/blob/main/src/images/screen2.png)
+![Preview](https://github.com/tjmelo/tmx-jupter/blob/main/public/screen2.png)
 
 Zip code found:
 
-![Preview](https://github.com/tjmelo/tmx-venus/blob/main/src/images/screen1.png)
+![Preview](https://github.com/tjmelo/tmx-jupter/blob/main/public/screen1.png)
 
 
 
