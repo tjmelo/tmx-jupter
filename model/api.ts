@@ -1,5 +1,4 @@
 import axios from "axios";
-import { Console } from "console";
 
 const BASEURL = "https://brasilapi.com.br/api/cep/v2/"
 
