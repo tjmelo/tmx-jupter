@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import styles from '../styles/Home.module.sass'
 import Script from 'next/script'
-import { URLMAP } from './constants'
+import { URLMAP } from '../modules/constants'
 
 import { data } from '../controller'
 import { Input } from '../components/input'
@@ -15,7 +15,7 @@ interface Data {
 }
 
 const Home: NextPage<Data> = () => {
-  const [num, setNum] = useState()
+  const [num, setNum] = useState<any>()
 
   const getCEP = async (e:string) => {
     const cep = await data(e)
