@@ -1,4 +1,4 @@
-# TMX JUPTER
+# TMX JUPTER [![Netlify Status](https://api.netlify.com/api/v1/badges/06950f3e-dcae-40c1-afb2-c23e4e0b54f4/deploy-status)](https://app.netlify.com/sites/melodious-lokum-a1bdb6/deploys)
 
 ![License](https://img.shields.io/github/license/tjmelo/tmx-jupter)
 ![Version](https://img.shields.io/github/v/release/tjmelo/tmx-jupter)
