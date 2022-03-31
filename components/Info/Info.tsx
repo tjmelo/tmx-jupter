@@ -18,15 +18,15 @@ export const Info = ({data}: Data) => {
                     <span>{data.city}</span>
                 </h2>
                 <h4>
-                    <strong> -> Neighborhood:</strong>
+                    <strong> {"-> "} Neighborhood:</strong>
                     <span>{data.neighborhood}</span>
                 </h4>
                 <h4>
-                    <strong> -> State:</strong> 
+                    <strong> {"-> "} State:</strong> 
                     <span>{data.state}</span>
                 </h4>
                 <h4>
-                    <strong> -> Street:</strong>
+                    <strong> {"-> "} Street:</strong>
                     <span>{data.street}</span>
                 </h4>
                 <section id="map"></section>
