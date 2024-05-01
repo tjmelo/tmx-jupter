@@ -19,12 +19,12 @@ const Home: NextPage<Data> = () => {
 
   const getCEP = async (e:string) => {
     const cep = await data(e)
-      setNum(cep);
+    setNum(cep);
   }
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Find any address through a CEP</h1>
+      <h1 className={styles.title}>Find any address through a Zip Code</h1>
         <Input gettingCEP={getCEP} />
         { 
           !num

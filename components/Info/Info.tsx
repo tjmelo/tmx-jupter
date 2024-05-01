@@ -7,13 +7,15 @@ declare interface Data {
 }
 
 export const Info = ({data}: Data) => {
-    useEffect(() => initializeMap(data.location.coordinates), [data])
+    useEffect((): void => {
+        if (data.location) initializeMap(data.location.coordinates)
+    }, [data])
     return (
         <>
             <section className={style.custom}>
                 
                 <h2>
-                    <small>CEP: {data.cep} </small>
+                    <small>Zip Code: {data.cep} </small>
                     <strong>City:</strong>
                     <span>{data.city}</span>
                 </h2>
@@ -29,7 +31,12 @@ export const Info = ({data}: Data) => {
                     <strong> {"-> "} Street:</strong>
                     <span>{data.street}</span>
                 </h4>
-                <section id="map"></section>
+                {
+                    data.location 
+                    ? (<section id="map"></section>)
+                    : (<div className={style['map-unavailable']}>Map unavailable</div>)
+                }
+                
             </section>
         </>
     )
