@@ -9,16 +9,12 @@ const INSTANCE: AxiosInstance = axios.create({
 const API = (params?: any) => {
     return INSTANCE
         .get(`v2/${params}`)
-        .catch((e): any => {
-            if (e.response.status === 500 ) {
-                return INSTANCE.get(`v1/${params}`)
-            } else {
+        .catch((): unknown => {
+            return INSTANCE.get(`v1/${params}`).catch(() => {
                 return {
-                    data: { 
-                        error: true
-                    }
+                    data: { error: true }
                 }
-            }
+            })
         })
 }
 
