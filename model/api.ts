@@ -9,7 +9,7 @@ const INSTANCE: AxiosInstance = axios.create({
 const API = (params?: any) => {
     return INSTANCE
         .get(`v2/${params}`)
-        .catch((): unknown => {
+        .catch((): any => {
             return INSTANCE.get(`v1/${params}`).catch(() => {
                 return {
                     data: { error: true }
