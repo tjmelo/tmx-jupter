@@ -15,7 +15,7 @@ export const Input = ({gettingCEP}: any) => {
                 type="text" 
                 ref={CEP}
                 maxLength={8}
-                placeholder='Type your CEP here'
+                placeholder='Type your Zip Code here'
             />
         </form>
     )

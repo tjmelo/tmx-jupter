@@ -1,19 +1,25 @@
-import axios from "axios";
+import axios, { AxiosInstance } from "axios";
 
-const BASEURL = "https://brasilapi.com.br/api/cep/v2/"
+const BASEURL = "https://brasilapi.com.br/api/cep/"
 
-const INSTANCE: any = axios.create({
+const INSTANCE: AxiosInstance = axios.create({
     baseURL: BASEURL,
 });
 
-const API = (params?: string): any => {
+const API = (params?: any) => {
     return INSTANCE
-    .get(params)
-    .catch((e: Object) => {
-        return {
-                data: { error: 'CEP not found!' }
+        .get(`v2/${params}`)
+        .catch((e): any => {
+            if (e.response.status === 500 ) {
+                return INSTANCE.get(`v1/${params}`)
+            } else {
+                return {
+                    data: { 
+                        error: true
+                    }
+                }
             }
-    })
+        })
 }
 
 export { API } 
