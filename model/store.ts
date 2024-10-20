@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { storeCEP } from '../controller/storeCEP'
+import { storeZipCode } from '../controller/storeZipCode'
 
 export const store = configureStore({
   reducer: {
-      CEP: storeCEP
+      zipCode: storeZipCode
   },
 })

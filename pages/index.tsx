@@ -1,5 +1,4 @@
 import type { NextPage } from 'next'
-import styles from '../styles/Home.module.sass'
 import Script from 'next/script'
 import { URLMAP } from '../modules/constants'
 
@@ -8,31 +7,27 @@ import { Input } from '../components/input'
 
 import { useState } from 'react'
 import { Info } from '../components/Info'
-import { NoCEP, NotFound } from '../components/fallback'
+import { NoZipCode, NotFound } from '../components/fallback'
+import { IData } from '../types'
+import { ContainerSection, TitleSection } from '../styles'
 
-interface Data {
-  data: object
-}
+const Home: NextPage<IData> = () => {
+  const [zipCodeNum, setZipCodeNum] = useState<IData>()
 
-const Home: NextPage<Data> = () => {
-  const [num, setNum] = useState<any>()
-
-  const getCEP = async (e:string) => {
-    const cep = await data(e)
-    setNum(cep);
+  const getZipCode = async (event:string) => {
+    const isZipCode = await data(event)
+    setZipCodeNum(isZipCode);
   }
 
+  const toRenderInfo = () => !zipCodeNum?.error ? <Info data={zipCodeNum} /> : <NotFound />
+
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>Find any address through a Zip Code</h1>
-        <Input gettingCEP={getCEP} />
-        { 
-          !num
-          ? <NoCEP />
-          : !num?.error ? <Info data={num} /> : <NotFound />
-        }
+    <ContainerSection>
+      <TitleSection>Find any address through a Zip Code</TitleSection>
+        <Input gettingCEP={getZipCode} />
+        { !zipCodeNum ? <NoZipCode /> : toRenderInfo() }
         <Script src={URLMAP} />
-    </div>
+    </ContainerSection>
   )
    
 }

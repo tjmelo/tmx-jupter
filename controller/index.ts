@@ -1,4 +1,4 @@
 import { data } from "./controller";
-import { store, storeCEP } from "./storeCEP";
+import { store, storeZipCode } from "./storeZipCode";
 
-export { data, store, storeCEP }
+export { data, store, storeZipCode }
