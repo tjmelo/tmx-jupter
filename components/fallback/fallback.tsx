@@ -1,19 +1,15 @@
-import style from './fallback.module.sass'
+import { FallbackSection, FallbackTitle } from '../../styles'
 
-const NoCEP = () => {
-    return (
-        <section className={style.custom}>
-            <h3> {"-> "} Waiting for a Zip Code...</h3>
-        </section>
-    )
-}
+const NoZipCode = () => (
+    <FallbackSection>
+        <FallbackTitle> {"-> "} Waiting for a Zip Code...</FallbackTitle>
+    </FallbackSection>
+)
 
-const NotFound = () => {
-    return (
-        <section className={style.custom}>
-            <h3> {"-> "} Zip code not found!</h3>
-        </section>
-    )
-}
+const NotFound = () => (
+    <FallbackSection>
+        <FallbackTitle> {"-> "} Zip code not found!</FallbackTitle>
+    </FallbackSection>
+)
 
-export { NoCEP, NotFound }
+export { NoZipCode, NotFound }

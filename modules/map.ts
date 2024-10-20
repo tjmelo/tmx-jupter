@@ -1,28 +1,34 @@
-declare var google: { 
+import { TInitialMap } from "../types";
+
+declare const google: { 
   maps: { 
-    LatLng: new (arg0: any, arg1: any) => any; 
-    MapTypeId: { ROADMAP: any; }; 
+    LatLng: new (arg0: string, arg1: string) => void;
+
+    MapTypeId: { ROADMAP: string; }; 
+
     Map: new (arg0: HTMLElement | null, arg1: { 
       scrollwheel: boolean; 
-      center: any; 
+      center: unknown; 
       zoom: number; 
       zoomControl: boolean; 
-      mapTypeId: any; }
-    ) => any; Marker: new (arg0: { position: any; map: any; }) => any; }; }; 
+      mapTypeId: string; }
 
-export const  initializeMap = ({longitude, latitude}: any) => {
-    var mapOptions = {
+    ) => {setOptions: (arg0: {}) => void}; 
+    
+    Marker: new (arg0: { position: string; map: string }) => void } }
+
+export const  initializeMap = ({longitude, latitude}: TInitialMap) => {
+    const mapOptions = {
       scrollwheel: true,
       center: new google.maps.LatLng(latitude, longitude),
       zoom: 16,
       zoomControl: false,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
-    var map = new google.maps.Map(document.getElementById("map"),
-        mapOptions);
-    //estilos
+
+    const map = new google.maps.Map(document.getElementById("map"), mapOptions);
 	
-    var styles = [
+    const styles = [
 		  {
 		    "stylers": [
 		      { "hue": "#0D3DFC" },
@@ -32,13 +38,6 @@ export const  initializeMap = ({longitude, latitude}: any) => {
 		  }
 	];
 
-	map.setOptions({styles: styles});
-
-    //icone personalizado
-    var myLatLng = new google.maps.LatLng(latitude, longitude);
-    var beachMarker = new google.maps.Marker({
-        position: myLatLng,
-        map: map,
-    });              
+	map.setOptions({styles: styles});            
 
 }

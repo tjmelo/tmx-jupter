@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 export const counterSlice = createSlice({
-  name: 'CEP',
+  name: 'ZipCode',
   initialState: {
     value: null,
   },
@@ -14,4 +14,4 @@ export const counterSlice = createSlice({
 
 export const { store } = counterSlice.actions
 
-export const storeCEP =  counterSlice.reducer
+export const storeZipCode =  counterSlice.reducer
