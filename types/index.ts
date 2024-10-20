@@ -8,22 +8,23 @@ export interface ILocation {
     coordinates: ICoordinates
 }
 
+export interface IInfoData {
+    cep: string
+    state: string
+    city: string
+    neighborhood: string
+    street: string
+    service: string,
+    location: ILocation
+    
+}
 export interface IData {
-    data: {
-        cep: string
-        state: string
-        city: string
-        neighborhood: string
-        street: string
-        service: string,
-        location: ILocation
-        
-    }
+    data: IInfoData
     error: string
 }
 
 export interface IGettingCEP {
-    gettingCEP: (arg: string | undefined) => void
+    gettingCEP: (arg: string) => Promise<void>
 }
 
 export type TInitialMap = {

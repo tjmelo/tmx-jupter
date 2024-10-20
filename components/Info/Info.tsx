@@ -3,7 +3,8 @@ import { useEffect } from 'react'
 import { IData } from '../../types'
 import { InfoSection, UnavailableMap } from '../../styles'
 
-export const Info = ({data}: IData) => {
+
+export const Info = ({data}: IData | any) => {
     useEffect(() => data.location && initializeMap(data.location.coordinates), [data])
 
     return (

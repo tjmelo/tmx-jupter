@@ -7,7 +7,7 @@ export const Input = ({gettingCEP}: IGettingCEP) => {
 
     const getCEP = (e: SyntheticEvent<HTMLFormElement>) => {
         e.preventDefault()
-        gettingCEP(isZipCode.current?.value)
+        gettingCEP(isZipCode.current!.value)
     }
 
     return(
