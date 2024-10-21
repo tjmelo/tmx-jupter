@@ -16,11 +16,12 @@ export interface IInfoData {
     street: string
     service: string,
     location: ILocation
+    error: string
     
 }
 export interface IData {
-    data: IInfoData
-    error: string
+    data?: IInfoData
+    error?: string
 }
 
 export interface IGettingCEP {

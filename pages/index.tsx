@@ -8,11 +8,11 @@ import { Input } from '../components/input'
 import { useState } from 'react'
 import { Info } from '../components/Info'
 import { NoZipCode, NotFound } from '../components/fallback'
-import { IData } from '../types'
+import { IData, IInfoData } from '../types'
 import { ContainerSection, TitleSection } from '../styles'
 
 const Home: NextPage<IData> = () => {
-  const [zipCodeNum, setZipCodeNum] = useState<IData>()
+  const [zipCodeNum, setZipCodeNum] = useState<IInfoData>()
 
   const getZipCode = async (event:string) => {
     const isZipCode = await data(event)
