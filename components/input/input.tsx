@@ -1,19 +1,20 @@
-import { useRef } from 'react';
-import style from './input.module.sass';
+import { SyntheticEvent, useRef } from 'react';
+import { IGettingCEP } from '../../types';
+import { InputZipCode } from '../../styles';
 
-export const Input = ({gettingCEP}: any) => {
-    const CEP = useRef<HTMLInputElement|any>();
-    const getCEP = (e: any) => {
+export const Input = ({gettingCEP}: IGettingCEP) => {
+    const isZipCode = useRef<HTMLInputElement>(null);
+
+    const getCEP = (e: SyntheticEvent<HTMLFormElement>) => {
         e.preventDefault()
-        gettingCEP(CEP.current.value)
+        gettingCEP(isZipCode.current!.value)
     }
 
     return(
         <form onSubmit={getCEP}>
-            <input 
-                className={style.input} 
+            <InputZipCode 
                 type="text" 
-                ref={CEP}
+                ref={isZipCode}
                 maxLength={8}
                 placeholder='Type your Zip Code here'
             />

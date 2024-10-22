@@ -1,3 +1,1 @@
-import { NoCEP, NotFound } from "./fallback";
-
-export { NoCEP, NotFound }
+export { NoZipCode, NotFound } from "./fallback";
