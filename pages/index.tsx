@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import Script from 'next/script'
+import Head from 'next/head';
 import { URLMAP } from '../modules/constants'
 
 import { data } from '../controller'
@@ -23,6 +24,9 @@ const Home: NextPage<IData> = () => {
 
   return (
     <ContainerSection>
+      <Head>
+        <link rel="shortcut icon" href="/favicon.icon.png" />                                                                                                                                                                              
+      </Head>
       <TitleSection>Find any address through a Zip Code</TitleSection>
         <Input gettingCEP={getZipCode} />
         { !zipCodeNum ? <NoZipCode /> : toRenderInfo() }
